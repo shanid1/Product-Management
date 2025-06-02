@@ -10,12 +10,7 @@ function Add(){
     async function addProduct(){
         if (names.trim() === "") return;
 
-        const branches = ["geepas", "olsenmark", "parajhon"];
-        if (!branches.includes(branchs.toLowerCase())) {
-            alert("Invalid branch name!");
-            return;
-        }
-
+        
         
         const productData = {
         name: names.toUpperCase(),
@@ -50,7 +45,7 @@ function Add(){
     <form>
     <input placeholder="Name" value={names}  onChange={(e)=>{setName(e.target.value)}}></input>
     <input placeholder="Price" value={prices} onChange={(e)=>{setPrice(e.target.value)}}></input>
-    <input placeholder="Branch (geepas/olsenmark/parajhon)" value={branchs} onChange={(e)=>{setBranch(e.target.value)}}></input>
+    <input placeholder="Branch)" value={branchs} onChange={(e)=>{setBranch(e.target.value)}}></input>
     <input placeholder="Stock" value={stocks} onChange={(e)=>{setStock(e.target.value)}}></input>
     <input placeholder="Sales" value={saless} onChange={(e)=>{setSales(e.target.value)}}></input>
     <button type="button" onClick={addProduct}>Add Product</button>

@@ -9,8 +9,14 @@ function App() {
 
   document.title = "Search/Adds";
 
+  async function fetchBranches() {
+    const branchesCol = collection(db, "branchesList");
+    const snapshot = await getDocs(branchesCol);
+    return snapshot.docs.map(doc => doc.data().name.toLowerCase());
+  }
+
   const handleSearch = async (query) => {
-    const branches = ["geepas", "olsenmark", "parajhon"];
+    const branches = await fetchBranches();
     let results = [];
 
     for (const branch of branches) {
@@ -22,6 +28,7 @@ function App() {
         snapshot.forEach((doc) => {
           const data = doc.data(); 
           if (data.name.toLowerCase().includes(query.toLowerCase())) {
+            data.branch = branch;
             results.push({ ...data, branch });
           }
         });
