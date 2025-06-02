@@ -20,7 +20,7 @@ function Add(){
         branch: branchs.toUpperCase(),
         };
         try {
-            const branchRef = collection(db, `branches/${branchs}/products`);
+            const branchRef = collection(db, `branches/${branchs.toLowerCase()}/products`);
             await addDoc(branchRef,productData);
             
             setName("");
@@ -43,11 +43,11 @@ function Add(){
   return(
     <div className="add">
     <form>
-    <input placeholder="Name" value={names}  onChange={(e)=>{setName(e.target.value)}}></input>
-    <input placeholder="Price" value={prices} onChange={(e)=>{setPrice(e.target.value)}}></input>
+    <input placeholder="Name:" value={names}  onChange={(e)=>{setName(e.target.value)}}></input>
+    <input placeholder="Price:" value={prices} onChange={(e)=>{setPrice(e.target.value)}}></input>
     <input placeholder="Branch:" value={branchs} onChange={(e)=>{setBranch(e.target.value)}}></input>
-    <input placeholder="Stock" value={stocks} onChange={(e)=>{setStock(e.target.value)}}></input>
-    <input placeholder="Sales" value={saless} onChange={(e)=>{setSales(e.target.value)}}></input>
+    <input placeholder="Stock:" value={stocks} onChange={(e)=>{setStock(e.target.value)}}></input>
+    <input placeholder="Sales:" value={saless} onChange={(e)=>{setSales(e.target.value)}}></input>
     <button type="button" onClick={addProduct}>Add Product</button>
     </form> 
     </div>
