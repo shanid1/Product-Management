@@ -7,7 +7,10 @@ import { getDocs, collection } from "firebase/firestore";
 function App() {
   const [products, setProducts] = useState([]);
 
+  useEffect(() => {
   document.title = "Search/Adds";
+}, []);
+
 
   async function fetchBranches() {
     const branchesCol = collection(db, "branches");
@@ -16,29 +19,30 @@ function App() {
   }
 
   const handleSearch = async (query) => {
-    const branches = await fetchBranches();
-    let results = [];
+  console.log("Search query:", query);
+  const branches = await fetchBranches();
+  console.log("Branches found:", branches);
+  let results = [];
 
-    for (const branch of branches) {
-      const branchRef = collection(db, `branches/${branch}/products`);
-
-      try {
-        const snapshot = await getDocs(branchRef);
-
-        snapshot.forEach((doc) => {
-          const data = doc.data(); 
-          if (data.name.toLowerCase().includes(query.toLowerCase())) {
-            data.branch = branch;
-            results.push({ ...data, branch });
-          }
-        });
-      } catch (err) {
-        console.error(`Error fetching products from ${branch}:`, err);
-      }
+  for (const branch of branches) {
+    const branchRef = collection(db, `branches/${branch}/products`);
+    try {
+      const snapshot = await getDocs(branchRef);
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        console.log(`Data from ${branch}:`, data);
+        if (data.name?.toLowerCase().includes(query.toLowerCase())) {
+          results.push({ ...data, branch });
+        }
+      });
+    } catch (err) {
+      console.error(`Error fetching from ${branch}:`, err);
     }
-    console.log(results);
-    setProducts(results);
-  };
+  }
+
+  setProducts(results);
+};
+
 
   return (
     <>
