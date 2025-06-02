@@ -13,21 +13,7 @@ function App() {
     document.title = "Search/Adds";
   }, []);
 
-  async function fetchBranches() {
-    try {
-      const branchesCol = collection(db, "branches");
-      const snapshot = await getDocs(branchesCol);
-      if (snapshot.empty) {
-        console.warn("No branches found in database");
-        return [];
-      }
-      return snapshot.docs.map(doc => doc.id);
-    } catch (err) {
-      console.error("Error fetching branches:", err);
-      setError("Failed to load branches");
-      return [];
-    }
-  }
+
 
 const handleSearch = async (query) => {
   const branches = ["geepas", "olsenmark", "parajohn"];

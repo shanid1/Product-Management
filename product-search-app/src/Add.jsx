@@ -27,11 +27,11 @@ async function addProduct(){
   price: prices+"$",
   stock: stocks+"pcs",
   sale: saless,
-  branch: branchs.toUpperCase(), 
+  branch: branchs, 
 };
 
 
-const branchRef = collection(db, `branches/${branchs.toUpperCase()}/products`);
+const branchRef = collection(db, `branches/${branchs}/products`);
         try {
             
             await addDoc(branchRef,productData);
@@ -58,7 +58,7 @@ const branchRef = collection(db, `branches/${branchs.toUpperCase()}/products`);
     <form>
     <input placeholder="Name:" value={names}  onChange={(e)=>{setName(e.target.value)}}></input>
     <input placeholder="Price:" value={prices} onChange={(e)=>{setPrice(e.target.value)}}></input>
-    <input placeholder="Branch:" value={branchs} onChange={(e)=>{setBranch(e.target.value)}}></input>
+    <input placeholder="Branch(geepas/olsenmark/parajohn):" value={branchs} onChange={(e)=>{setBranch(e.target.value)}}></input>
     <input placeholder="Stock:" value={stocks} onChange={(e)=>{setStock(e.target.value)}}></input>
     <input placeholder="Sales:" value={saless} onChange={(e)=>{setSales(e.target.value)}}></input>
     <button type="button" onClick={addProduct}>Add Product</button>
