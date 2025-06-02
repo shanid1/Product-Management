@@ -6,6 +6,7 @@ const SearchBar = ({ onSearch }) => {
   const [showAdd, setShowAdd] = useState(false); 
 
   function handleSearch() {
+    setShowAdd(false)
     if (query.trim()) {
       onSearch(query.trim());
     }

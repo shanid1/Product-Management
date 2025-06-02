@@ -21,9 +21,9 @@ const ProductCard = ({product}) =>{
     }
     return(
     <div className="card">
-        <h1>{product.name}</h1>
+        <h1>{product.name.toUpperCase()}</h1>
         <div className="cardIn">
-        <h2>{product.branch}</h2>
+        <h2>{product.branch.toUpperCase()}</h2>
         <h2>{product.price}</h2>
         </div>
         <div className="cardInfo">
