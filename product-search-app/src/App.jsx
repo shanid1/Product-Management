@@ -30,39 +30,25 @@ function App() {
   }
 
 const handleSearch = async (query) => {
-  if (!query.trim()) {
-    setProducts([]);
-    return;
+  const branches = ["geepas", "olsenmark", "parajohn"];
+  let results = [];
+
+  for (const branch of branches) {
+    const branchRef = collection(db, `branches/${branch}/products`);
+    try {
+      const snapshot = await getDocs(branchRef);
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        if (data.name.toLowerCase().includes(query.toLowerCase())) {
+          results.push({ ...data, branch });
+        }
+      });
+    } catch (error) {
+      console.error(`Error fetching products from ${branch}:`, error);
+    }
   }
 
-  setLoading(true);
-  setError(null);
-  
-  try {
-    const searchTerm = query.toLowerCase();
-    const productsRef = collection(db, "products");
-    const snapshot = await getDocs(productsRef);
-    
-    let results = [];
-    
-    snapshot.forEach((doc) => {
-      const data = doc.data();
-      const productName = data.name || '';
-      if (productName.toLowerCase().includes(searchTerm)) {
-        results.push({ 
-          ...data,
-          id: doc.id 
-        });
-      }
-    });
-
-    setProducts(results);
-  } catch (err) {
-    console.error("Search error:", err);
-    setError("Failed to complete search");
-  } finally {
-    setLoading(false);
-  }
+  setProducts(results);
 };
 
   return (

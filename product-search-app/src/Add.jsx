@@ -7,11 +7,18 @@ function Add(){
     const [branchs,setBranch] = useState("");
     const [stocks,setStock] = useState("");
     const [saless,setSales] = useState("");
-    async function addProduct(){
+
+
+async function addProduct(){
         if (names.trim() === "" || branchs.trim() === "") {
     alert("Name and Branch are required!");
     return;
   }
+  const branches = ["geepas", "olsenmark", "parajhon"];
+    if (!branches.includes(branch)) {
+      alert("Invalid branch name!");
+      return;
+    }
 
         
         
