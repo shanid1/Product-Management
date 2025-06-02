@@ -13,7 +13,7 @@ function Add(){
         
         
         const productData = {
-        name: names.toUpperCase(),
+        name: names,
         price:prices+"$",
         stock:stocks+"pcs",
         sale: saless,
