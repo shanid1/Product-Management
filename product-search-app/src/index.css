@@ -1,0 +1,255 @@
+.searchbox{
+  
+
+  align-items: center;
+  text-align: center;
+  
+}
+
+.searchinput{
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  width: 70%;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #D9E8D8;
+  color: #0d0c22;
+  box-shadow: 0 0 5px #C1D9BF, 0 0 0 10px #f5f5f5eb;
+  transition: .3s ease;
+  margin: 10px;
+}
+
+.searchinput::placeholder {
+  color: #777;
+}
+
+.searchbtn{
+  
+  background-color: #8DBCC7;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 5px;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  transition: 0.2s ease;
+  padding: 10px;
+ 
+}
+
+.searchbtn:hover,
+.searchbtn:focus {
+  background-color: #07c;
+}
+
+.searchbtn:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.searchbtn:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+
+
+.card{
+  margin: 20px;
+ 
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.251);
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: #a4ccd94f;
+  color: black;
+  width: 30%;
+}
+.card h1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+}
+
+.cardIn{
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.251);
+  background-color: #C4E1E6;
+  margin: 10px;
+  align-items: center;
+  border-radius: 20px;
+  transition: 0.3s ease;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.cardIn:hover{
+  background-color: #dbfaff;
+
+}
+.cardInfo{
+   display: flex;
+   margin: 10px;
+  justify-content: space-around;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.251);
+  background-color: #C4E1E6;
+  transition: 0.3s ease;
+  
+  align-items: center;
+  border-radius: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.6rem;
+  font-weight: bold;
+}
+.cardInfo:hover{
+  background-color: #d8f9ff;
+
+}
+p{
+  text-align: center;
+  color: gainsboro;
+  margin: 25px;
+}
+.maindiv
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.addbtn{
+  
+  background-color: #8DBCC7;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 5px;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  transition: 0.2s ease;
+  padding: 10px;
+  
+}
+
+.addbtn:hover,
+.addbtn:focus {
+  background-color: #07c;
+}
+
+.addbtn:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.addbtn:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+
+
+
+.add {
+  margin:30px;
+  background: #f0f0f0; /* Replaces $form-bg */
+  padding: 50px 100px;
+  border: 2px solid rgba(0, 0, 0, 1);
+  box-shadow: 15px 15px 1px #cccccc, 15px 15px 1px 2px rgba(0, 0, 0, 1); /* Replaces $form-shadow */
+  transition: 0.3s ease;
+}
+
+.add input {
+  display: block;
+  width: 100%;
+  font-size: 16px; /* Replaces $font-size */
+  line-height: 32px; /* font-size * 2 */
+  font-family: Arial, sans-serif; /* Replaces $font-face */
+  margin-bottom: 32px; /* font-size * 2 */
+  border: none;
+  border-bottom: 5px solid rgba(0, 0, 0, 1);
+  background: #f0f0f0;
+  min-width: 250px;
+  padding-left: 5px;
+  outline: none;
+  color: rgba(0, 0, 0, 1);
+}
+
+.add input:focus {
+  border-bottom: 5px solid #cccccc; /* Replaces $form-shadow */
+}
+
+.add button {
+  display: block;
+  margin: 0 auto;
+  line-height: 32px; /* font-size * 2 */
+  padding: 0 20px;
+  background: #cccccc; /* Replaces $form-shadow */
+  letter-spacing: 2px;
+  transition: 0.2s all ease-in-out;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 1);
+  box-shadow: 3px 3px 1px 1px #ffcc00, 3px 3px 1px 2px rgba(0, 0, 0, 1); /* Replaces $form-primary-highlight */
+}
+
+.add:hover {
+  background: rgba(0, 0, 0, 0.211);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.add input::selection {
+  background: #aaddff; /* Replaces $form-secondary-highlight */
+}
+
+
+.dltbtn {
+  color: #ecf0f1;
+  font-size: 17px;
+  background-color: #e62222;
+  border: 1px solid #f31212;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  box-shadow: 0px 6px 0px #d30000;
+  transition: all 0.1s;
+}
+
+.dltbtn:active {
+  box-shadow: 0px 2px 0px #d30000;
+  position: relative;
+  top: 2px;
+}
