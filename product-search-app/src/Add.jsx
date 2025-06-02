@@ -18,11 +18,11 @@ function Add(){
 
         
         const productData = {
-        name:names,
-        price:prices,
-        stock:stocks,
+        name: names.toUpperCase,
+        price:prices+"$",
+        stock:stocks+"pcs",
         sale: saless,
-        branch:branchs,
+        branch: branchs.toUpperCase,
         };
         try {
             const branchRef = collection(db, `branches/${branchs}/products`);
