@@ -29,7 +29,6 @@ function App() {
     }
   }
 
- // Updated handleSearch function
 const handleSearch = async (query) => {
   if (!query.trim()) {
     setProducts([]);
@@ -40,34 +39,23 @@ const handleSearch = async (query) => {
   setError(null);
   
   try {
-    console.log("Starting search for:", query);
-    const branches = await fetchBranches();
-    console.log("Available branches:", branches);
-
-    let results = [];
     const searchTerm = query.toLowerCase();
+    const productsRef = collection(db, "products");
+    const snapshot = await getDocs(productsRef);
+    
+    let results = [];
+    
+    snapshot.forEach((doc) => {
+      const data = doc.data();
+      const productName = data.name || '';
+      if (productName.toLowerCase().includes(searchTerm)) {
+        results.push({ 
+          ...data,
+          id: doc.id 
+        });
+      }
+    });
 
-    for (const branch of branches) {
-      console.log(`Checking branch: ${branch}`);
-      // Convert branch to uppercase to match how you store it
-      const formattedBranch = branch.toUpperCase();
-      const branchRef = collection(db, `branches/${formattedBranch}/products`);
-      const snapshot = await getDocs(branchRef);
-      
-      snapshot.forEach((doc) => {
-        const data = doc.data();
-        const productName = data.name || '';
-        if (productName.toLowerCase().includes(searchTerm)) {
-          results.push({ 
-            ...data, 
-            branch: formattedBranch, // Use the formatted branch name
-            id: doc.id 
-          });
-        }
-      });
-    }
-
-    console.log("Final results:", results);
     setProducts(results);
   } catch (err) {
     console.error("Search error:", err);
