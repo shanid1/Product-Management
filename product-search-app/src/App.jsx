@@ -13,10 +13,11 @@ function App() {
 
 
   async function fetchBranches() {
-    const branchesCol = collection(db, "branches");
-    const snapshot = await getDocs(branchesCol);
-    return snapshot.docs.map(doc => doc.data().name.toLowerCase());
-  }
+  const branchesCol = collection(db, "branches");
+  const snapshot = await getDocs(branchesCol);
+  return snapshot.docs.map(doc => doc.id.toLowerCase());
+}
+
 
   const handleSearch = async (query) => {
   console.log("Search query:", query);
