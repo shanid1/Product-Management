@@ -15,7 +15,7 @@ async function addProduct(){
     return;
   }
   const branches = ["geepas", "olsenmark", "parajhon"];
-    if (!branches.includes(branch)) {
+    if (!branches.includes(branchs)) {
       alert("Invalid branch name!");
       return;
     }
