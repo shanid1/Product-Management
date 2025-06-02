@@ -16,7 +16,7 @@ function App() {
 
 
 const handleSearch = async (query) => {
-  const branches = ["geepas", "olsenmark", "parajohn"];
+  const branches = ["geepas", "olsenmark", "parajhon"];
   let results = [];
 
   for (const branch of branches) {
