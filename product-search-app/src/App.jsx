@@ -10,7 +10,7 @@ function App() {
   document.title = "Search/Adds";
 
   async function fetchBranches() {
-    const branchesCol = collection(db, "branchesList");
+    const branchesCol = collection(db, "branches");
     const snapshot = await getDocs(branchesCol);
     return snapshot.docs.map(doc => doc.data().name.toLowerCase());
   }
