@@ -8,19 +8,25 @@ function Add(){
     const [stocks,setStock] = useState("");
     const [saless,setSales] = useState("");
     async function addProduct(){
-        if (names.trim() === "") return;
+        if (names.trim() === "" || branchs.trim() === "") {
+    alert("Name and Branch are required!");
+    return;
+  }
 
         
         
-        const productData = {
-        name: names,
-        price:prices+"$",
-        stock:stocks+"pcs",
-        sale: saless,
-        branch: branchs.toUpperCase(),
-        };
+       const productData = {
+  name: names,
+  price: prices+"$",
+  stock: stocks+"pcs",
+  sale: saless,
+  branch: branchs.toUpperCase(), 
+};
+
+
+const branchRef = collection(db, `branches/${branchs.toUpperCase()}/products`);
         try {
-            const branchRef = collection(db, `branches/${branchs.toLowerCase()}/products`);
+            
             await addDoc(branchRef,productData);
             
             setName("");
