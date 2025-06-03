@@ -3,8 +3,8 @@ import { db } from "./firebase";
 import { getDocs, collection, deleteDoc, query, where } from "firebase/firestore";
 
 const ProductCard = ({ product }) => {
-  const [newprices, setNewPrice] = useState(0);
-  const [newaed, setNewAed] = useState(0);
+  const [newprices, setNewPrice] = useState();
+  const [newaed, setNewAed] = useState();
 
   const newWAC = (parseFloat(newaed) * 0.105) * 1.09;
   const WAC = (parseFloat(product.aed) * 0.105) * 1.09;
