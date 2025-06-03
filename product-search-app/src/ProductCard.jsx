@@ -33,7 +33,7 @@ const ProductCard = ({ product }) => {
       <h1>{product.name.toUpperCase()}</h1>
       <div className="cardIn">
         <h2>{product.branch.toUpperCase()}</h2>
-        <h2>OD{product.price}OMR</h2>
+        <h2>OD: {product.price}OMR</h2>
       </div>
       <div className="cardInfo">
         <h3>WAC: {product.wac}</h3>
@@ -52,7 +52,7 @@ const ProductCard = ({ product }) => {
         <input
           type="number"
           className="cardInput"
-          placeholder="New Price."
+          placeholder="New Price..."
           value={newprices}
           onChange={newpricechange}
         />
