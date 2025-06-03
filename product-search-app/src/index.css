@@ -90,6 +90,12 @@
 
 }
 
+.cardInput{
+  border: none;
+  border-radius: 20px;
+  width: 80px;
+}
+
 .cardIn{
   display: flex;
   justify-content: space-around;
