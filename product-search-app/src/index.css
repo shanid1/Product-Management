@@ -93,7 +93,11 @@
 .cardInput{
   border: none;
   border-radius: 20px;
+  transition: 0.3s ease;
   width: 80px;
+}
+.cardInput:hover{
+  border-radius: 30px;
 }
 
 .cardIn{
