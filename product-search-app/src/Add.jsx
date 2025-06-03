@@ -8,7 +8,6 @@ function Add(){
     const [stocks,setStock] = useState("");
     const [newaeds,setNewAed] = useState("");
     const [aeds,setAed] = useState("");
-    const [wacs,setWac] = useState("");
 
 
 async function addProduct(){
@@ -28,7 +27,6 @@ async function addProduct(){
   name: names,
   price: prices,
   stock: stocks,
-  wac: wacs,
   newaed: newaeds,
   aed: aeds,
   branch: branchs, 
@@ -46,7 +44,6 @@ const branchRef = collection(db, `branches/${branchs}/products`);
             setBranch("");
             setNewAed("");
             setAed("");
-            setWac("");
             alert("Product added successfully!");
         }
         catch (error) {
@@ -68,7 +65,6 @@ const branchRef = collection(db, `branches/${branchs}/products`);
     <input placeholder="Stock:" value={stocks} onChange={(e)=>{setStock(e.target.value)}}></input>
     <input placeholder="AED:" value={newaeds} onChange={(e)=>{setNewAed(e.target.value)}}></input>
     <input placeholder="New AED:" value={aeds} onChange={(e)=>{setAed(e.target.value)}}></input>
-    <input placeholder="WAC:" value={wacs} onChange={(e)=>{setWac(e.target.value)}}></input>
     <select value={branchs} onChange={(e)=>{setBranch(e.target.value)}}>
       <option>Select a branch</option>
       <option>geepas</option>

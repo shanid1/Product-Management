@@ -5,7 +5,8 @@ import { getDocs, collection, deleteDoc, query, where } from "firebase/firestore
 const ProductCard = ({ product }) => {
   const [newprices, setNewPrice] = useState(product.nprice || 1);
 
-  const newWAC = (parseFloat(product.aed) * 0.105) * 1.09;
+  const newWAC = (parseFloat(product.newaed) * 0.105) * 1.09;
+  const WAC = (parseFloat(product.aed) * 0.105) * 1.09;
   const newGP = ((parseFloat(newprices) - newWAC) / parseFloat(newprices)) * 100;
 
   function newpricechange(e) {
@@ -36,7 +37,7 @@ const ProductCard = ({ product }) => {
         <h2>OD: {product.price}OMR</h2>
       </div>
       <div className="cardInfo">
-        <h3>WAC: {product.wac}</h3>
+        <h3>WAC: {WAC.toFixed(2)}</h3>
         <h3>New WAC: {newWAC.toFixed(2)}</h3>
       </div>
       <div className="cardInfo">
