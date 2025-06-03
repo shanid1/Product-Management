@@ -58,9 +58,15 @@ const branchRef = collection(db, `branches/${branchs}/products`);
     <form>
     <input placeholder="Name:" value={names}  onChange={(e)=>{setName(e.target.value)}}></input>
     <input placeholder="Price:" value={prices} onChange={(e)=>{setPrice(e.target.value)}}></input>
-    <input placeholder="Branch(geepas/olsenmark/parajohn):" value={branchs} onChange={(e)=>{setBranch(e.target.value)}}></input>
+    
     <input placeholder="Stock:" value={stocks} onChange={(e)=>{setStock(e.target.value)}}></input>
     <input placeholder="Sales:" value={saless} onChange={(e)=>{setSales(e.target.value)}}></input>
+    <select value={branchs} onChange={(e)=>{setBranch(e.target.value)}}>
+      <option>Select a branch</option>
+      <option>geepas</option>
+      <option>olsenmark</option>
+      <option>parajhon</option>
+    </select>
     <button type="button" onClick={addProduct}>Add Product</button>
     </form> 
     </div>
