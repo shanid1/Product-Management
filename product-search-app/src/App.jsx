@@ -28,6 +28,9 @@ const handleSearch = async (query) => {
         if (data.name.toLowerCase().includes(query.toLowerCase())) {
           results.push({ ...data, branch });
         }
+        if (data.desc.toLowerCase().includes(query.toLowerCase())) {
+          results.push({ ...data, branch });
+        }
       });
     } catch (error) {
       console.error(`Error fetching products from ${branch}:`, error);
