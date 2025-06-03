@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
 
   const newWAC = (parseFloat(product.newaed) * 0.105) * 1.09;
   const WAC = (parseFloat(product.aed) * 0.105) * 1.09;
-  const newGP = ((parseFloat(newprices) - newWAC) / parseFloat(newprices)) * 100;
+  const newGP = ((parseFloat(newprices) - WAC) / parseFloat(newprices)) * 100;
 
   function newpricechange(e) {
     setNewPrice(e.target.value);
