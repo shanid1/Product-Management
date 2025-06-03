@@ -12,7 +12,7 @@ function Add(){
 
 async function addProduct(){
         if (names.trim() === "" || branchs.trim() === "") {
-    alert("Name and Branch are required!");
+    alert("Name and Brand are required!");
     return;
   }
   const branches = ["geepas", "olsenmark", "krypton"];
@@ -66,7 +66,7 @@ const branchRef = collection(db, `branches/${branchs}/products`);
     <input placeholder="AED:" value={newaeds} onChange={(e)=>{setNewAed(e.target.value)}}></input>
     <input placeholder="New AED:" value={aeds} onChange={(e)=>{setAed(e.target.value)}}></input>
     <select value={branchs} onChange={(e)=>{setBranch(e.target.value)}}>
-      <option>Select a branch</option>
+      <option>Select a brand</option>
       <option>geepas</option>
       <option>olsenmark</option>
       <option>krypton</option>
