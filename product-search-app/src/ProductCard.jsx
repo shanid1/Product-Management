@@ -46,7 +46,7 @@ const ProductCard = ({ product }) => {
       </div>
       <div className="cardInfo">
         <h3>AED: {product.aed}</h3>
-        <h3>New Price: {product.nprice}</h3>
+        <h3>New GP: {newGP.toFixed(2)}</h3>
       </div>
       <div className="cardInfo">
         <h3>Stock: {product.stock}</h3>
